@@ -19,3 +19,6 @@ doc/
 
 # vim swapfiles
 *.sw[a-p]
+
+# reference docs
+docs
