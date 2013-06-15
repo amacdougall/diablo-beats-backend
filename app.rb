@@ -3,10 +3,6 @@ require "rest-client"
 require "nokogiri"
 require "json"
 
-require "pry"
-require "pry-debugger"
-require "pry-stack_explorer"
-
 LIFE_EXPECTANCY_FILENAME = "life_expectancy_data.json"
 
 helpers do
@@ -109,8 +105,6 @@ get "/patients/:id/?" do
       .select {|e| e["totalHDL"] == patient[:totalHDL]}
       .select {|e| e["hba1c"] == patient[:hba1c]}
       .last
-
-    binding.pry
 
     patient[:life] = entry["life"] + age_adjustment
 
